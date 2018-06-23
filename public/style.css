@@ -1,0 +1,444 @@
+*{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+/*///////////////////////////////////////////////////
+ ////////////////WELCOME HEADER/////////////////////
+ ////////////////////////////////////////////////*/
+#welcomeHeader{
+    height: auto;
+    border-bottom: 1px solid black;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#logo{
+    width: 50%;
+}
+#logo img{
+    margin: 8px;
+    height: 40px;
+    cursor: pointer
+}
+#RegAndLog{
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 10px;
+}
+#RegAndLog h1{
+    color: #002b80;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* border: 1px solid #002b80; */
+    padding: 3px;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 400;
+}
+#RegAndLog h1:hover{
+    color: #80aaff;
+    /* border: 1px solid #80aaff; */
+}
+/*///////////////////////////////////////////////////
+ ////////////////WELCOME BODY/////////////////////
+ ////////////////////////////////////////////////*/
+ #welcomeBody{
+     height: auto;
+     width: auto;
+ }
+  /* ////////////////WELCOME BACKGROUND///////////////////// */
+ #welcomeBackground{
+     width: 100vw;
+     height: 750px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+}
+#welcomeBackground img{
+    object-fit: contain;
+}
+#welcomeBackgroundText{
+    position: absolute;
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+#welcomeBackgroundText h1{
+    color: white;
+}
+/* ////////////////WELCOME BACKGROUND///////////////////// */
+#welcomeText{
+    width: 100vw;
+    height: auto;
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+#welcomeText h1{
+    color: #000033;
+    font-size: 25px;
+    padding-left: 15px;
+    font-weight: 500;
+}
+#welcomeTextOne{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#welcomeTextTwo{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#pTagOne{
+    color: #000033;
+    padding: 15px;
+    font-weight: 300;
+}
+#pTagTwo{
+    color: #000033;
+    padding: 15px;
+    font-weight: 300;
+}
+/* ////////////////WELCOME FOOTER///////////////////// */
+#welcomeFooter{
+    width: inherit;
+    height: auto;
+    border-top: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #000033;
+}
+#welcomeFooter h3{
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-weight: 400;
+}
+#welcomeFooter h3:hover{
+    color: #80aaff;
+}
+
+/*///////////////////////////////////////////////////
+ ////////////////REGISTER///////////////////////////
+ ////////////////////////////////////////////////*/
+
+#outerRegister{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#middleRegister{
+    background-color: rgba(255,255,255,0.8);
+    padding: 60px 60px 40px 60px;
+    border-radius: 10px;
+}
+#xButton{
+    width: 20px;
+    position: relative;
+    float: right;
+    bottom: 50px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#xButton p{
+    font-weight: 400;
+    font-size: 28px;
+    cursor: pointer;
+}
+#xButton:hover{
+    transform: translateY(-2px);
+    transition-duration: 0.3s;
+}
+#innerRegister{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+
+}
+#innerRegister input{
+    margin: 8px;
+    width: 90%;
+    border: 1px solid white;
+    padding: 0px 5px 0px 5px;
+}
+#innerRegister button{
+    margin-top: 20px;
+    width: 90%;
+    border: 1px solid black;
+    padding: 3px 0px 3px 0px;
+    cursor: pointer;
+    background-color: #000033;
+    color: white;
+}
+#innerRegister button:hover{
+    background-color: white;
+    color: #000033;
+}
+/*///////////////////////////////////////////////////
+ ////////////////LOGIN//////////////////////////////
+ ////////////////////////////////////////////////*/
+#outerLogin{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#innerLogin{
+    background-color: rgba(255,255,255,0.8);
+    padding: 35px 60px 40px 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#innerLogin p{
+    position: relative;
+    float: right;
+    bottom: 25px;
+    left: 120px;
+    font-weight: 400;
+    font-size: 28px;
+    cursor: pointer;
+}
+#innerLogin p:hover{
+    transform: translateY(-2px);
+    transition-duration: 0.3s;
+}
+#innerLogin form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#innerLogin input{
+    margin: 8px 0px 8px 0px;
+    width: 90%;
+    border: 1px solid white;
+    padding: 0px 5px 0px 5px;
+}
+#innerLogin button{
+    margin-top: 20px;
+    width: 90%;
+    border: 1px solid black;
+    padding: 3px 0px 3px 0px;
+    cursor: pointer;
+    background-color: #000033;
+    color: white;
+}
+#innerLogin button:hover{
+    background-color: white;
+    color: #000033;
+}
+/*///////////////////////////////////////////////////
+ ////////////////HeaderLoggedIn/////////////////////
+ ////////////////////////////////////////////////*/
+#headerLoggedIn{
+    width: 100vw;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#headerLoggedInLogo{
+    margin: 8px;
+    height: 40px;
+    cursor: pointer
+}
+#headerLoggedInBurger{
+    position: relative;
+    float: right;
+    height: 45px;
+    margin: 5px 16px 5px 0px;
+    cursor: pointer;
+}
+#headerLoggedInBurger:hover{
+    transform: translateY(-1px);
+    transition-duration: 0.5s;
+    color: #80aaff;
+}
+/*///////////////////////////////////////////////////
+ ///////////////////////MenuSidebar////////////////
+ ////////////////////////////////////////////////*/
+ #menuSidebar{
+     height: 100vh;
+     width: auto;
+     padding-right: 20px;
+     padding-left: 15px;
+     position: fixed;
+     left: 0px;
+     background-color: rgba(255, 255, 255, 0.9);
+ }
+ #menuCloseX{
+     height: 10%;
+ }
+ #menuCloseX p{
+     margin: 15px 0px 0px 5px;
+     font-size: 22px;
+     font-weight: 500;
+     position: relative;
+     cursor: pointer;
+ }
+ #menuCloseX p:hover{
+     transform: translateY(-1px);
+     transition-duration: 0.5s;
+     color: #80aaff;
+ }
+ #menuLinks{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     flex-direction: column;
+     height: 70%;
+     width: 99%;
+ }
+ #menuLinks h1{
+     margin: 18px 0px 18px 0px;
+     font-weight: 400;
+     color: black;
+     font-size: 22px;
+     text-decoration: none;
+     cursor: pointer;
+ }
+ #menuLinks h1:hover{
+     transform: translateY(-1px);
+     transition-duration: 0.5s;
+     color: #80aaff;
+ }
+ #menuLinks a{
+     text-decoration: none;
+ }
+/*///////////////////////////////////////////////////
+ ///////////////////////lsbbContainer////////////////
+ ////////////////////////////////////////////////*/
+ #lsbbContainer{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100vw;
+     height: 90vh;
+     background-color: rgba(255, 255, 255, 0.5);
+ }
+ #lsbbContent{
+     display: flex;
+     flex-direction: column;
+     width: 40%;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+     background-color: rgba(255, 255, 255, 0.9);
+     padding: 20px;
+     border-radius: 10px;
+ }
+ #topContent{
+     display: flex;
+     flex-direction: row;
+     max-height: 49%;
+     width: 99%;
+ }
+ #imageUploader{
+     width: 40%;
+     height: auto;
+     padding-left: 15px;
+ }
+ #nextToImg{
+     width: 59%;
+     padding-top: 20px;
+ }
+ #imageUploader img{
+     width: 70%;
+     cursor: pointer;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+ }
+ .listTop{
+     display: flex;
+     flex-direction: row;
+     align-items: baseline;
+     margin-top: 15px;
+     margin-bottom: 5px;
+ }
+ .listTop h3{
+     width: 50%;
+     font-size: 17px;
+     font-weight: 500;
+ }
+ .listTop p{
+     font-size: 15px;
+ }
+ .bottomContent{
+     margin-top: 18px;
+ }
+.listBottom{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.listBottom h3{
+    width: 50%;
+    font-size: 17px;
+    font-weight: 500;
+}
+.listBottom p{
+    font-size: 15px;
+    margin-left: 10px;
+}
+/*///////////////////////////////////////////////////
+ ////////////////App////////////////////////////////
+ ////////////////////////////////////////////////*/
+#app{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/assets/fishingboat.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+/*///////////////////////////////////////////////////
+ ////////////////SCROLLBAR/////////////////////
+ ////////////////////////////////////////////////*/
+ ::-webkit-scrollbar {
+     width: 10px;
+ }
+ ::-webkit-scrollbar-track {
+     background-color: white;
+ }
+ ::-webkit-scrollbar-thumb {
+     background: #000033;
+     height: 80px;
+ }
+ ::-webkit-scrollbar-thumb:hover {
+     background: #80aaff;
+ }
