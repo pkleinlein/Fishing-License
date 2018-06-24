@@ -13,7 +13,12 @@ exports.getUserByEmail = function getUserByEmail(email) {
 exports.getUserById = function getUserById(userId){
     return db.query("SELECT * FROM nutzer WHERE id = $1", [userId]);
 };
-
+exports.registerWater = function registerWater(name, club, adress, description, rules, stocking){
+    return db.query("INSERT INTO wasser(name, club, adress, description, rules, stocking) VALUES ($1, $2, $3, $4, $5, $6)", [name, club, adress, description, rules, stocking]);
+};
+exports.getWaters = function getWaters(){
+    return db.query("SELECT * FROM wasser");
+};
 
 
 exports.hashPassword = function (plainTextPassword) {

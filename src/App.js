@@ -1,8 +1,11 @@
 import React from "react";
 import axios from "./axios";
 import { BrowserRouter, Link, Route } from "react-router-dom";
+
 import HeaderLoggedIn from "./HeaderLoggedIn";
 import LoggedInStartBody from "./LoggedInStartBody";
+import RegisterWater from "./RegisterWater";
+import Waters from "./Waters";
 
 export default class App extends React.Component{
     constructor(props){
@@ -43,6 +46,9 @@ export default class App extends React.Component{
                             <LoggedInStartBody
                                 state={this.state}
                             />
+                        )} />
+                        <Route exact path="/registerWater" render ={() =>(
+                            <Waters />
                         )} />
                     </div>
                 </BrowserRouter>

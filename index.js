@@ -80,6 +80,24 @@ if (process.env.NODE_ENV != "production") {
 /////////////////////////////////ROUTES/////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+app.get("/gewaesser", function(req, res){
+    db
+        .getWaters()
+        .then((data) => {
+            res.json({
+                data: data.rows
+            });
+        });
+});
+app.post("/registerWater", function(req, res){
+    db
+        .registerWater(req.body.name, req.body.club, req.body.adress, req.body.description, req.body.rules, req.body.stocking)
+        .then(() =>{
+            res.json({
+                success: true
+            });
+        });
+});
 app.post("/register", function(req, res) {
     db
         .hashPassword(req.body.password)

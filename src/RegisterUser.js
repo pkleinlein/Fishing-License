@@ -12,7 +12,6 @@ export default class RegisterUser extends React.Component {
         this[e.target.name] = e.target.value;
     }
     handleSubmit() {
-        console.log("handle submit");
         const {first, last, birthday, street, postcode, birthplace, licensenumber, email, password} = this;
         axios
             .post("/register", {first, last, birthday, street, postcode, birthplace, licensenumber, email, password})
