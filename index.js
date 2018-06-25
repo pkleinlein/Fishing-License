@@ -80,13 +80,13 @@ if (process.env.NODE_ENV != "production") {
 /////////////////////////////////ROUTES/////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-app.get("/gewaesser", function(req, res){
+app.get("/gewaesserDaten", function(req, res){
     db
         .getWaters()
-        .then((data) => {
-            res.json({
-                data: data.rows
-            });
+        .then((result) => {
+            res.json(
+                result.rows
+            );
         });
 });
 app.post("/registerWater", function(req, res){
@@ -132,7 +132,6 @@ app.post("/login", function(req, res) {
     db
         .getUserByEmail(req.body.email)
         .then(function(data) {
-            console.log(data);
             userId = data.rows[0].id;
             first = data.rows[0].first;
             last = data.rows[0].last;

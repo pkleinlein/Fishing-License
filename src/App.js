@@ -47,7 +47,7 @@ export default class App extends React.Component{
                                 state={this.state}
                             />
                         )} />
-                        <Route exact path="/registerWater" render ={() =>(
+                        <Route exact path="/gewaesser" render ={() =>(
                             <Waters />
                         )} />
                     </div>

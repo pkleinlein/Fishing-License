@@ -14,7 +14,7 @@ export default class MenuSidebar extends React.Component{
                     <p onClick={this.props.close}>X</p>
                 </div>
                 <div id="menuLinks">
-                    <Link to="/registerWater"><h1>Gewässer</h1></Link>
+                    <Link to="/gewaesser"><h1>Gewässer</h1></Link>
                     <h1>Vereine</h1>
                     <h1>Über Uns</h1>
                     <h1>Hilfe</h1>

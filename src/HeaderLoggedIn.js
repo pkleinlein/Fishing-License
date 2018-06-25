@@ -23,7 +23,7 @@ export default class HeaderLoggedIn extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div id="headerContainer">
                 <div id="headerLoggedIn">
                     <Link to ="/"><img id="headerLoggedInLogo" src="/assets/outlinefishLogo.svg"/></Link>
                     <img onClick={this.showMenu}  id="headerLoggedInBurger" src="/assets/burgermenu.png" />

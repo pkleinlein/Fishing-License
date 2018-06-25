@@ -269,9 +269,13 @@
 /*///////////////////////////////////////////////////
  ////////////////HeaderLoggedIn/////////////////////
  ////////////////////////////////////////////////*/
-#headerLoggedIn{
+#headerContainer{
+    position: relative;
+}
+ #headerLoggedIn{
     width: 100vw;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     background-color: rgba(255, 255, 255, 0.9);
 }
 #headerLoggedInLogo{
@@ -301,7 +305,7 @@
      padding-left: 15px;
      position: fixed;
      left: 0px;
-     background-color: rgba(255, 255, 255, 0.9);
+     background-color: rgba(0, 0, 0, 0.9);
  }
  #menuCloseX{
      height: 10%;
@@ -311,6 +315,7 @@
      font-size: 22px;
      font-weight: 500;
      position: relative;
+     color: white;
      cursor: pointer;
  }
  #menuCloseX p:hover{
@@ -329,7 +334,7 @@
  #menuLinks h1{
      margin: 18px 0px 18px 0px;
      font-weight: 400;
-     color: black;
+     color: white;
      font-size: 22px;
      text-decoration: none;
      cursor: pointer;
@@ -350,17 +355,17 @@
      justify-content: center;
      align-items: center;
      width: 100vw;
-     height: 90vh;
-     background-color: rgba(255, 255, 255, 0.5);
+     height: 100vh;
+     background-color: rgba(0, 0, 0, 0.5);
  }
  #lsbbContent{
      display: flex;
      flex-direction: column;
      width: 40%;
      border: 1px solid rgba(0, 0, 0, 0.5);
-     background-color: rgba(255, 255, 255, 0.9);
+     background-color: rgba(0, 0, 0, 0.8);
      padding: 20px;
-     border-radius: 10px;
+     border-radius: 4px;
  }
  #topContent{
      display: flex;
@@ -393,9 +398,11 @@
      width: 50%;
      font-size: 17px;
      font-weight: 500;
+     color: white;
  }
  .listTop p{
      font-size: 15px;
+     color: white;
  }
  .bottomContent{
      margin-top: 18px;
@@ -411,10 +418,104 @@
     width: 50%;
     font-size: 17px;
     font-weight: 500;
+    color: white;
 }
 .listBottom p{
     font-size: 15px;
+    color: white;
     margin-left: 10px;
+}
+/*///////////////////////////////////////////////////
+ ////////////////WATERS////////////////////////////////
+ ////////////////////////////////////////////////*/
+ #watersContainer{
+     padding-top: 25px;
+     background-color: rgba(0, 0, 0, 0.3);
+     height: 100vh;
+     width: 100vw;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+.eachWater{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 10px 0px 10px 0px;
+    border: 1px solid rgba(255,255,255, 0.3);
+    width: 60%;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding-bottom: 5px;
+    height: auto;
+    text-decoration: none;
+}
+#eachWaterIMG{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    /* max-width: 60%; */
+    height: auto;
+}
+#eachWaterText{
+    flex-grow: 1;
+    align-self: center;
+    padding-left: 10px;
+}
+#eachWaterText div{
+    margin: 10px 0px 10px 0px;
+}
+.eachOtherWater{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 60%;
+    border: 1px solid rgba(255,255,255, 0.3);
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+#eachOtherWaterText{
+    flex-grow: 1;
+    align-self: center;
+    padding-left: 10px;
+}
+#eachOtherWaterText div{
+    margin: 10px 0px 10px 0px;
+}
+#watersContainer h1{
+    font-weight: 500;
+}
+#watersContainer h3{
+    font-weight: 500;
+}
+#watersContainer p{
+    font-weight: 300;
+}
+
+
+
+
+.waterPic{
+    height: 150px;
+}
+.eachWater:hover{
+    transform: translateY(-1px);
+    transition-duration: 0.5s;
+    border: 1px solid white;
+}
+.eachOtherWater:hover{
+    transform: translateY(-1px);
+    transition-duration: 0.5s;
+    border: 1px solid white;
+}
+.waterName{
+    letter-spacing: 5px;
+    margin: 0px 2px 0px 2px;
 }
 /*///////////////////////////////////////////////////
  ////////////////App////////////////////////////////
