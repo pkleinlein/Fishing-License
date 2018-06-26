@@ -19,6 +19,9 @@ exports.registerWater = function registerWater(name, club, adress, description, 
 exports.getWaters = function getWaters(){
     return db.query("SELECT * FROM wasser");
 };
+exports.getWaterById = function getWaterById(id){
+    return db.query("SELECT * FROM wasser WHERE id=$1",[id]);
+};
 
 
 exports.hashPassword = function (plainTextPassword) {

@@ -6,6 +6,7 @@ import HeaderLoggedIn from "./HeaderLoggedIn";
 import LoggedInStartBody from "./LoggedInStartBody";
 import RegisterWater from "./RegisterWater";
 import Waters from "./Waters";
+import WaterProfile from "./WaterProfile";
 
 export default class App extends React.Component{
     constructor(props){
@@ -50,6 +51,9 @@ export default class App extends React.Component{
                         <Route exact path="/gewaesser" render ={() =>(
                             <Waters />
                         )} />
+                        <Route exact path="/gewaesser/:id"
+                            component = {WaterProfile}
+                        />
                     </div>
                 </BrowserRouter>
             </div>

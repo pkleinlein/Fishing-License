@@ -528,6 +528,81 @@
     background-size: 100vw 100vh;
 }
 /*///////////////////////////////////////////////////
+ ////////////////GewaesserProfile/////////////////////
+ ////////////////////////////////////////////////*/
+#gewaesserProfileContainer{
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#innerGPContainer{
+    background-color: rgba(0,0,0,0.85);
+    width: 70%;
+    color: white;
+    padding: 15px 0px 0px 15px;
+    margin: 25px 0px 25px 0px;
+    border-radius: 3px;
+}
+#GPimageData{
+    flex-flow: row;
+    display: flex;
+}
+#GPimage{
+    width: 50%;
+}
+#GPdata{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#descriptionStockingRules{
+    padding: 40px 0px 40px 0px;
+}
+#descriptionStockingRules h3{
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+#descriptionStockingRules p{
+    font-weight: 300;
+}
+
+#innerGPContainer img{
+    height: 250px;
+}
+#innerGPContainer p{
+    margin-bottom: 18px;
+}
+#buyBotton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    margin: 20px 0px 20px 0px;
+}
+#buyBotton h1{
+    border: 1px solid white;
+    padding: 4px 8px 4px 8px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 25px;
+}
+#buyBotton h1:hover{
+    /* color: black;
+    background-color: white;
+    border: 1px solid black; */
+    transform: translateY(-1px);
+    transition-duration: 0.5s;
+}
+/*///////////////////////////////////////////////////
  ////////////////SCROLLBAR/////////////////////
  ////////////////////////////////////////////////*/
  ::-webkit-scrollbar {
@@ -537,8 +612,9 @@
      background-color: white;
  }
  ::-webkit-scrollbar-thumb {
-     background: #000033;
      height: 80px;
+     background: black;
+     /* #000033 */
  }
  ::-webkit-scrollbar-thumb:hover {
      background: #80aaff;
