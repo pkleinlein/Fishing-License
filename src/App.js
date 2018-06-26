@@ -49,10 +49,11 @@ export default class App extends React.Component{
                             />
                         )} />
                         <Route exact path="/gewaesser" render ={() =>(
-                            <Waters />
+                            <Waters user={this.state}/>
                         )} />
                         <Route exact path="/gewaesser/:id"
                             component = {WaterProfile}
+
                         />
                     </div>
                 </BrowserRouter>

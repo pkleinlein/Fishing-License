@@ -1,11 +1,17 @@
 import React from "react";
 import axios from "./axios";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
+import TicketToPdf from "./TicketToPdf";
 
 
 export default class WaterProfile extends React.Component{
     constructor(props){
         super(props);
         this.state = {};
+        this.showTicket = this.showTicket.bind(this);
+        this.cancleTicket = this.cancleTicket.bind(this);
     }
     componentDidMount(){
         console.log("hiii", this.props);
@@ -22,12 +28,23 @@ export default class WaterProfile extends React.Component{
                 console.log(err);
             });
     }
+    showTicket(){
+        this.setState({
+            ticketVis: true
+        });
+    }
+    cancleTicket(){
+        this.setState({
+            ticketVis: false
+        });
+    }
     render(){
         if(!this.state.curWater){
             return <div>loading...</div>;
         }
         return (
             <div id="gewaesserProfileContainer">
+                {this.state.ticketVis && <TicketToPdf curWater={this.state.curWater} cancle={this.cancleTicket}/>}
                 <div id="innerGPContainer">
                     <div id="GPimageData">
                         <div id="GPimage"><img src={this.state.curWater.photo || "/assets/lake.jpg"} /></div>
@@ -43,7 +60,7 @@ export default class WaterProfile extends React.Component{
                         <h3>Regeln und Vorschriften</h3><p>{this.state.curWater.rules}</p>
                     </div>
                     <div id="buyBotton">
-                        <h1>Tageskarte kaufen</h1>
+                        <h1 onClick={this.showTicket}>Tageskarte kaufen</h1>
                     </div>
                 </div>
             </div>
