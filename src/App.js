@@ -51,14 +51,14 @@ export default class App extends React.Component{
                         <Route exact path="/gewaesser" render ={() =>(
                             <Waters user={this.state}/>
                         )} />
-                        <Route exact path="/gewaesser/:id"
-                            component = {WaterProfile}
-
+                        <Route exact path="/gewaesser/:id" render ={(props) => (
+                            <WaterProfile user={this.state} id={props.match.params.id}/>
+                        )}
                         />
+
                     </div>
                 </BrowserRouter>
             </div>
         );
     }
-
 }

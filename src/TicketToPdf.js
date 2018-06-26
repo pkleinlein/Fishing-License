@@ -2,7 +2,7 @@ import React from "react";
 import axios from "./axios";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-
+import QRCode from "qrcode.react";
 
 export default class TicketToPdf extends React.Component{
     constructor(props){
@@ -34,6 +34,7 @@ export default class TicketToPdf extends React.Component{
                     <h3>{this.props.curWater.description}</h3>
                     <h3>{this.props.curWater.rules}</h3>
                     <h3>{this.props.curWater.stocking}</h3>
+                    <QRCode value={this.props.curWater.name + "#" + this.props.curWater.club} />
                 </div>
                 <div id="pdfBuyCnacleButton">
                     <h1 onClick={this.createPDF}>Kaufen</h1>
