@@ -105,6 +105,35 @@ app.post("/registerWater", function(req, res){
             });
         });
 });
+app.post("/registerClub", function(req, res) {
+    db
+        .hashPassword(req.body.password)
+        .then(function(hashedPass) {
+            return db.registerClub(req.body.name, req.body.ceo, req.body.clubNumber, req.body.street, req.body.postcode, req.body.city, req.body.email, hashedPass);
+        })
+        .then(function(result) {
+            req.session.clubId = result.rows[0].id;
+            req.session.name = result.rows[0].name;
+            req.session.ceo = result.rows[0].ceo;
+            req.session.clubNumber = result.rows[0].clubNumber;
+            req.session.street = result.rows[0].street;
+            req.session.postcode = result.rows[0].postcode;
+            req.session.city = result.rows[0].city;
+            req.session.email = result.rows[0].email;
+        })
+        .then(function() {
+            console.log(req.session.clubId);
+            res.json({
+                success: true
+            });
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json({
+                success: false
+            });
+        });
+});
 app.post("/register", function(req, res) {
     db
         .hashPassword(req.body.password)
@@ -193,17 +222,39 @@ app.get("/logout", function(req,res){
     req.session = null;
     res.redirect("/welcome");
 });
+
+
+
+app.get("/clubs", function(req, res){
+    if(req.session.clubId){
+        console.log(req.session.clubId);
+        res.sendFile(__dirname + '/index.html');
+    }
+    else{
+        res.redirect("/welcome");
+
+    }
+});
+
 app.get('/welcome', function(req, res) {
     if(req.session.userId){
         res.redirect("/");
-    }else{
+    }
+    else if(req.session.clubId){
+        res.redirect("/clubs");
+    }
+    else{
         res.sendFile(__dirname + '/index.html');
     }
 });
 app.get('*', function(req, res) {
-    if(!req.session.userId){
+    if(!req.session.userId && !req.session.clubId){
         res.redirect("/welcome");
-    }else{
+    }
+    else if(req.session.clubId && !req.session.userId){
+        res.redirect("/clubs");
+    }
+    else{
         res.sendFile(__dirname + '/index.html');
     }
 });

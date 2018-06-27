@@ -22,6 +22,9 @@ exports.getWaters = function getWaters(){
 exports.getWaterById = function getWaterById(id){
     return db.query("SELECT * FROM wasser WHERE id=$1",[id]);
 };
+exports.registerClub = function registerClub(name, ceo, clubNumber, street, postcode, city, email, password){
+    return db.query("INSERT INTO clubs (name, ceo, clubNumber, street, postcode, city, email, password) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *", [name, ceo, clubNumber, street, postcode, city, email, password]);
+};
 
 
 exports.hashPassword = function (plainTextPassword) {

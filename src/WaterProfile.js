@@ -15,7 +15,7 @@ export default class WaterProfile extends React.Component{
     }
     componentDidMount(){
         console.log("hiii", this.props);
-        const id = this.props.match.params.id;
+        const id = this.props.id;
         axios
             .get(`/gewaesser/${id}.json`)
             .then(({data}) =>{
@@ -44,7 +44,11 @@ export default class WaterProfile extends React.Component{
         }
         return (
             <div id="gewaesserProfileContainer">
-                {this.state.ticketVis && <TicketToPdf curWater={this.state.curWater} cancle={this.cancleTicket}/>}
+                {this.state.ticketVis && <TicketToPdf
+                    curWater={this.state.curWater}
+                    cancle={this.cancleTicket}
+                    user={this.props.user}
+                />}
                 <div id="innerGPContainer">
                     <div id="GPimageData">
                         <div id="GPimage"><img src={this.state.curWater.photo || "/assets/lake.jpg"} /></div>
