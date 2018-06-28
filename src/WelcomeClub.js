@@ -11,13 +11,38 @@ export default class WelcomeClub extends React.Component{
     constructor(props){
         super(props);
         this.state = {};
+        this.showRegClub = this.showRegClub.bind(this);
+        this.hideRegClub = this.hideRegClub.bind(this);
+        this.showLogClub = this.showLogClub.bind(this);
+        this.hideLogClub = this.hideLogClub.bind(this);
+    }
+    showRegClub(){
+        this.setState({
+            regClubVis: true
+        });
+    }
+    hideRegClub(){
+        this.setState({
+            regClubVis: false
+        });
+    }
+    showLogClub(){
+        this.setState({
+            logClubVis: true
+        });
+    }
+    hideLogClub(){
+        this.setState({
+            logClubVis: false
+        });
     }
     render(){
         return (
             <div>
-                <RegisterClub />
+                {this.state.logClubVis && <LoginClub hideLogClub={this.hideLogClub} />}
+                {this.state.regClubVis && <RegisterClub hideRegClub={this.hideRegClub} />}
                 <WelcomeClubHeader />
-                <WelcomeClubBody />
+                <WelcomeClubBody showRegClub={this.showRegClub} showLogClub={this.showLogClub}/>
             </div>
         );
     }

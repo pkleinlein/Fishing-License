@@ -14,8 +14,8 @@ export default class WelcomeClubBody extends React.Component{
                     <div id="welcomeClubBodyContent">
                         <h1>So funktioniert die Regestrierung für ihren Verein:</h1>
                         <div id="logAndRegClub">
-                            <h1 id="logClub">Login</h1>
-                            <h1 id="regClub">Registrieren</h1>
+                            <h1 onClick={this.props.showLogClub} id="logClub">Login</h1>
+                            <h1 onClick={this.props.showRegClub} id="regClub">Registrieren</h1>
                         </div>
                     </div>
                 </div>

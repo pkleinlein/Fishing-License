@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "./axios";
-// import QrReader from "react-qr-reader";
+import QrReader from "react-qr-reader";
 
 export default class ScannerClub extends React.Component {
     constructor(props) {
@@ -13,8 +13,16 @@ export default class ScannerClub extends React.Component {
     }
     handleScan(data) {
         if (data) {
+            const array = data.split("#");
             this.setState({
-                result: data
+                success:true,
+                result: data,
+                resultFirst: array[0],
+                resultLast: array[1],
+                resultStreet: array[2],
+                resultPostcode: array[3],
+                resultCity: array[4],
+                resultLicensenumber: array[5]
             });
         }
     }
@@ -23,14 +31,23 @@ export default class ScannerClub extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div id="qrReader">
                 <QrReader
                     delay={this.state.delay}
                     onError={this.handleError}
                     onScan={this.handleScan}
-                    style={{ width: "100%" }}
+                    style={{ width: "30%" }}
                 />
-                <p>{this.state.result}</p>
+                {this.state.success &&
+                <div>
+                    <p>Name: {this.state.resultFirst}</p>
+                    <p>Nachname: {this.state.resultLast}</p>
+                    <p>Straße: {this.state.resultStreet}</p>
+                    <p>Postleitzahl: {this.state.resultPostcode}</p>
+                    <p>Ort: {this.state.resultCity}</p>
+                    <p>Fischereischeinnummer: {this.state.resultLicensenumber}</p>
+                </div>
+                }
             </div>
         );
     }

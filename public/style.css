@@ -195,7 +195,7 @@
 
 }
 #middleRegister{
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.9);
     padding: 60px 60px 40px 60px;
     border-radius: 10px;
 }
@@ -263,7 +263,7 @@
     align-items: center;
 }
 #innerLogin{
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.9);
     padding: 35px 60px 40px 60px;
     border-radius: 10px;
     display: flex;
@@ -474,7 +474,7 @@
  #watersContainer{
      padding-top: 25px;
      background-color: rgba(0, 0, 0, 0.3);
-     height: 100vh;
+     min-height: 100vh;
      width: 100vw;
      display: flex;
      justify-content: center;
@@ -739,6 +739,103 @@
     color: black;
     background-color: white;
     border: 1px solid black;
+}
+/*///////////////////////////////////////////////////
+ ////////////////WATERS CLUB/////////////////////
+ ////////////////////////////////////////////////*/
+#openRegWater{
+    margin: 5px 0px 5px 18px;
+    width: 400px;
+}
+#clubWatersContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+#iDontEvenKnow{
+    width: 100%;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.5); */
+}
+#messageClubWaters{
+    align-self: flex-start;
+    margin: 50px 0px 0px 15px;
+}
+#clubWater{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    width: 90%;
+    margin: 15px 0px 15px 0px;
+}
+#clubWaterText{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0px 0px 15px;
+}
+ /*///////////////////WATER REGISTER /////////////////*/
+#outerWaterRegister{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    flex-direction: column;
+}
+#minusWContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 18px 0px 0px;
+}
+.hoverWaterReg:hover{
+    cursor: pointer;
+    transform: translateY(-1px);
+    transition-duration: 0.5s;
+}
+#innerRegisterWater{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #000033;
+    padding: 25px;
+    border-radius: 3px;
+    margin: 20px 0px 20px 0px;
+
+}
+#innerRegisterWater input{
+    margin: 8px;
+    width: 90%;
+    border: 1px solid #000033;
+    padding: 0px 5px 0px 5px;
+}
+#innerRegisterWater button{
+    margin-top: 20px;
+    width: 40%;
+    border: 1px solid black;
+    padding: 3px 0px 3px 0px;
+    cursor: pointer;
+    background-color: #000033;
+    color: white;
+}
+#innerRegisterWater button:hover{
+    background-color: white;
+    color: #000033;
+}
+/*///////////////////////////////////////////////////
+ ////////////////SCANNER/////////////////////
+ ////////////////////////////////////////////////*/
+#qrReader{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 /*///////////////////////////////////////////////////
  ////////////////SCROLLBAR/////////////////////

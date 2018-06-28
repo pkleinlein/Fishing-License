@@ -53,7 +53,7 @@ export default class TicketToPdf extends React.Component{
                         <h3>{this.props.curWater.rules}</h3>
                     </div>
                     <div id="ticketQRCode">
-                        <QRCode value={this.props.curWater.name + "#" + this.props.curWater.club} />
+                        <QRCode value={this.props.user.first + "#" + this.props.user.last + "#" + this.props.user.street + "#" + this.props.user.postcode+"#" +this.props.user.birthplace + "#"+ this.props.user.licensenumber +"#" + this.props.curWater.name + "#" + this.props.curWater.club} />
                     </div>
                 </div>
                 <div id="pdfBuyCnacleButton">

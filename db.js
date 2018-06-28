@@ -10,11 +10,17 @@ exports.registerUser = function(first, last, birthday, street, postcode, birthpl
 exports.getUserByEmail = function getUserByEmail(email) {
     return db.query(`SELECT * FROM nutzer WHERE email = $1`, [email]);
 };
+exports.getClubByEmail = function getClubByEmail(email){
+    return db.query("SELECT * FROM clubs WHERE email = $1", [email]);
+};
 exports.getUserById = function getUserById(userId){
     return db.query("SELECT * FROM nutzer WHERE id = $1", [userId]);
 };
-exports.registerWater = function registerWater(name, club, adress, description, rules, stocking){
-    return db.query("INSERT INTO wasser(name, club, adress, description, rules, stocking) VALUES ($1, $2, $3, $4, $5, $6)", [name, club, adress, description, rules, stocking]);
+exports.getClubById = function getClubById(clubId){
+    return db.query("SELECT * FROM clubs WHERE id = $1", [clubId]);
+};
+exports.registerWater = function registerWater(clubId, name, club, adress, description, rules, stocking){
+    return db.query("INSERT INTO wasser(club_id, name, club, adress, description, rules, stocking) VALUES ($1, $2, $3, $4, $5, $6, $7)", [clubId, name, club, adress, description, rules, stocking]);
 };
 exports.getWaters = function getWaters(){
     return db.query("SELECT * FROM wasser");
@@ -25,7 +31,9 @@ exports.getWaterById = function getWaterById(id){
 exports.registerClub = function registerClub(name, ceo, clubNumber, street, postcode, city, email, password){
     return db.query("INSERT INTO clubs (name, ceo, clubNumber, street, postcode, city, email, password) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *", [name, ceo, clubNumber, street, postcode, city, email, password]);
 };
-
+exports.getClubWaters = function getClubWaters(clubId){
+    return db.query("SELECT * FROM wasser WHERE club_id=$1", [clubId]);
+};
 
 exports.hashPassword = function (plainTextPassword) {
     return new Promise(function(resolve, reject) {

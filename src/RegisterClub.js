@@ -32,7 +32,7 @@ export default class RegisterUser extends React.Component {
             <div id="outerRegister">
                 <div id="middleRegister">
                     <div id="xButton">
-                        <p onClick={this.props.closeRegister}>X</p>
+                        <p onClick={this.props.hideRegClub}>X</p>
                     </div>
                     <div id="innerRegister">
                         {this.state.error && <div className="err">Oops! You suck</div>}

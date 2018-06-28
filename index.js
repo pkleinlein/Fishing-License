@@ -96,9 +96,18 @@ app.get("/gewaesserDaten", function(req, res){
             );
         });
 });
+app.get("/getWatersForClub", function(req, res){
+    db
+        .getClubWaters(req.query.clubId)
+        .then((result) => {
+            res.json(
+                result.rows
+            );
+        });
+});
 app.post("/registerWater", function(req, res){
     db
-        .registerWater(req.body.name, req.body.club, req.body.adress, req.body.description, req.body.rules, req.body.stocking)
+        .registerWater(req.body.clubId, req.body.name, req.body.club, req.body.adress, req.body.description, req.body.rules, req.body.stocking)
         .then(() =>{
             res.json({
                 success: true
@@ -134,6 +143,55 @@ app.post("/registerClub", function(req, res) {
             });
         });
 });
+app.post("/loginClub", function(req, res){
+    console.log("loginclub route");
+    let clubId, name, ceo, clubNumber, street, postcode, city, icon, email;
+    db
+        .getClubByEmail(req.body.email)
+        .then(function(data){
+            console.log(data);
+            clubId = data.rows[0].id,
+            name = data.rows[0].name,
+            ceo = data.rows[0].ceo,
+            clubNumber = data.rows[0].clubNumber,
+            street = data.rows[0].street,
+            postcode = data.rows[0].postcode,
+            city = data.rows[0].city,
+            icon = data.rows[0].icon,
+            email = data.rows[0].email;
+            return db.checkPassword(req.body.password, data.rows[0].password);
+        })
+        .then(function (data){
+            console.log("next step");
+            if(data){
+                console.log("next next step");
+                req.session.clubId = clubId;
+                req.session.name = name;
+                req.session.ceo = ceo;
+                req.session.clubNumber = clubNumber;
+                req.session.street = street;
+                req.session.postcode = postcode;
+                req.session.city = city;
+                req.session.icon = icon;
+                req.session.email = email;
+                res.json({
+                    success: true
+                });
+            }
+            else{
+                throw new Error();
+            }
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json({
+                success: false
+            });
+        });
+});
+
+
+
 app.post("/register", function(req, res) {
     db
         .hashPassword(req.body.password)
@@ -214,7 +272,16 @@ app.get("/user", function(req, res){
         console.log(err);
     });
 });
-
+app.get("/clubById", function(req, res){
+    return db.getClubById(req.session.clubId).then(function(result){
+        res.json({
+            club: result.rows[0],
+            success: true
+        });
+    }).catch((err) =>{
+        console.log(err);
+    });
+});
 
 
 
