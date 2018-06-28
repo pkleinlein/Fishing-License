@@ -570,6 +570,13 @@
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
+#appClub{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/assets/fliegenfischer.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
 /*///////////////////////////////////////////////////
  ////////////////GewaesserProfile/////////////////////
  ////////////////////////////////////////////////*/
@@ -677,9 +684,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 5px 0px 5px 0px;
     border-bottom: 1px solid black;
     letter-spacing: 5px;
+}
+#date{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 #ticketFisher{
     display: flex;
@@ -743,19 +758,28 @@
 /*///////////////////////////////////////////////////
  ////////////////WATERS CLUB/////////////////////
  ////////////////////////////////////////////////*/
+ #watersClubContainer{
+     background-color: rgba(0,0,0,0.2);
+     color: white;
+     width: 100vw;
+ }
 #openRegWater{
     margin: 5px 0px 5px 18px;
     width: 400px;
 }
 #clubWatersContainer{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 100vw;
+    background-color: rgba(0,0,0,0.2);
+    min-height: 100vh;
+    color: white;
 }
 #iDontEvenKnow{
     width: 100%;
+    background-color: rgba(0,0,0,0.2);
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.5); */
 }
 #messageClubWaters{
@@ -765,9 +789,11 @@
 #clubWater{
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    border: 1px solid rgba(255,255,255,0.5);
     width: 90%;
     margin: 15px 0px 15px 0px;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 3px;
 }
 #clubWaterText{
     height: inherit;
@@ -781,8 +807,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid black;
     flex-direction: column;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
 }
 #minusWContainer{
     width: 100%;
@@ -802,7 +829,8 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    background-color: #000033;
+    background-color: rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.5);
     padding: 25px;
     border-radius: 3px;
     margin: 20px 0px 20px 0px;
@@ -811,16 +839,16 @@
 #innerRegisterWater input{
     margin: 8px;
     width: 90%;
-    border: 1px solid #000033;
+    border: 1px solid rgba(255,255,255,0.5);
     padding: 0px 5px 0px 5px;
 }
 #innerRegisterWater button{
     margin-top: 20px;
     width: 40%;
-    border: 1px solid black;
+    border: 1px solid rgba(255,255,255,0.5);
     padding: 3px 0px 3px 0px;
     cursor: pointer;
-    background-color: #000033;
+    background-color: black;
     color: white;
 }
 #innerRegisterWater button:hover{
@@ -830,12 +858,50 @@
 /*///////////////////////////////////////////////////
  ////////////////SCANNER/////////////////////
  ////////////////////////////////////////////////*/
+ #scannerContainer{
+     width: 100vw;
+     height: 100vh;
+     background-color: rgba(0,0,0,0.4);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+ }
 #qrReader{
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px 0px 100px 0px;
+}
+#innerScanner{
+}
+#scanResult{
+    color: white;
+    background-color: rgba(0,0,0,0.0);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#gultig{
+    font-weight: 500;
+    color: green;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ungultig{
+    font-weight: 500;
+    color: red;
+}
+#scanResult p{
+    margin-bottom: 21px;
 }
 /*///////////////////////////////////////////////////
  ////////////////SCROLLBAR/////////////////////

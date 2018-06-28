@@ -35,7 +35,7 @@ export default class AppClub extends React.Component{
             return <h1>loading.....</h1>;
         }
         return (
-            <div>
+            <div id="appClub">
                 <BrowserRouter>
                     <div>
                         <Route path="*" render={() => <HeaderLoggedInClub  /> } />

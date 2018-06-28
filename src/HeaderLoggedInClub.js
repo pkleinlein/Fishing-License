@@ -25,7 +25,7 @@ export default class HeaderLoggedInClub extends React.Component{
         return(
             <div id="headerContainer">
                 <div id="headerLoggedIn">
-                    <Link to ="/"><img id="headerLoggedInLogo" src="/assets/outlinefishLogo.svg"/></Link>
+                    <Link to ="/clubs"><img id="headerLoggedInLogo" src="/assets/outlinefishLogo.svg"/></Link>
                     <img onClick={this.showMenu}  id="headerLoggedInBurger" src="/assets/burgermenu.png" />
                     {this.state.menuVis && <MenuSidebarClub closeDiv={this.closemenuDiv} />}
                 </div>

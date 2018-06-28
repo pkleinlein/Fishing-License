@@ -37,6 +37,11 @@ export default class TicketToPdf extends React.Component{
                 <div id="pdfContentContainer">
                     <div id="ticketHeader">
                         <h1>Tageskarte</h1>
+                        <div id ="date">
+                            <h3>{this.props.day}.</h3>
+                            <h3>{this.props.month}.</h3>
+                            <h3>{this.props.year}</h3>
+                        </div>
                     </div>
                     <div id="ticketFisher">
                         <h1>Fichereiberechtigte /-r</h1>
@@ -53,7 +58,7 @@ export default class TicketToPdf extends React.Component{
                         <h3>{this.props.curWater.rules}</h3>
                     </div>
                     <div id="ticketQRCode">
-                        <QRCode value={this.props.user.first + "#" + this.props.user.last + "#" + this.props.user.street + "#" + this.props.user.postcode+"#" +this.props.user.birthplace + "#"+ this.props.user.licensenumber +"#" + this.props.curWater.name + "#" + this.props.curWater.club} />
+                        <QRCode value={this.props.user.first + "#" + this.props.user.last + "#" + this.props.user.street + "#" + this.props.user.postcode+"#" +this.props.user.birthplace + "#"+ this.props.user.licensenumber +"#" + this.props.curWater.name + "#" + this.props.curWater.club + "#" + this.props.day + "#" + this.props.month + "#" + this.props.year} />
                     </div>
                 </div>
                 <div id="pdfBuyCnacleButton">
