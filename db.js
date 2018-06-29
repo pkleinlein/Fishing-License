@@ -2,8 +2,12 @@ const spicedPg = require("spiced-pg");
 const db = spicedPg("postgres:paul-:postgres@localhost:5432/finalproject");
 const bcrypt = require("bcryptjs");
 
-
-
+exports.getAllClubs = function getAllClubs(){
+    return db.query("SELECT * FROM clubs");
+};
+exports.saveImage = function saveImage(id, url){
+    return db.query("UPDATE clubs SET icon = $2 WHERE id = $1 RETURNING icon", [id, url]);
+};
 exports.registerUser = function(first, last, birthday, street, postcode, birthplace, licensenumber, email, password){
     return db.query("INSERT INTO nutzer (first, last, birthday, street, postcode, birthplace, licensenumber, email, password) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",[first, last, birthday, street, postcode, birthplace, licensenumber, email, password]);
 };

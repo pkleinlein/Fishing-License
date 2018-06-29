@@ -89,7 +89,7 @@ export default class WaterProfile extends React.Component{
                     </div>
                     <div id="dropDown">
                         <select onChange={this.setYear} id="year">
-                            <option value="-">-</option>
+                            <option value="-">Jahr</option>
                             <option value="2016">2016</option>
                             <option value="2017">2017</option>
                             <option value="2018">2018</option>
@@ -100,7 +100,7 @@ export default class WaterProfile extends React.Component{
                             <option value="2023">2023</option>
                         </select>
                         <select onChange={this.setMonth} id="Month">
-                            <option value="-">-</option>
+                            <option value="-">Monat</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>
@@ -115,7 +115,7 @@ export default class WaterProfile extends React.Component{
                             <option value="12">12</option>
                         </select>
                         <select onChange={this.setDay} id="Day">
-                            <option value="-">-</option>
+                            <option value="-">Tag</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>

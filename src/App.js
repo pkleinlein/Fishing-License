@@ -7,6 +7,7 @@ import LoggedInStartBody from "./LoggedInStartBody";
 import RegisterWater from "./RegisterWater";
 import Waters from "./Waters";
 import WaterProfile from "./WaterProfile";
+import AllClubs from "./AllClubs";
 
 export default class App extends React.Component{
     constructor(props){
@@ -53,6 +54,10 @@ export default class App extends React.Component{
                         )} />
                         <Route exact path="/gewaesser/:id" render ={(props) => (
                             <WaterProfile user={this.state} id={props.match.params.id}/>
+                        )}
+                        />
+                        <Route exact path="/AllClubs" render ={() => (
+                            <AllClubs />
                         )}
                         />
 

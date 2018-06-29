@@ -80,6 +80,18 @@ if (process.env.NODE_ENV != "production") {
 /////////////////////////////////ROUTES/////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+app.post('/upload',uploader.single('file'), s3.upload, (req, res) => {
+    console.log("trying");
+    db.saveImage(req.session.clubId, config.s3Url + req.file.filename).then(function(result) {
+        res.json(
+            result.rows[0].icon
+        );
+    }).catch(function(err) {
+        console.log("error at app.post upload route " + err);
+    });
+});
+
+
 app.get("/gewaesser/:id.json", function(req,res){
     db.getWaterById(req.params.id).then((data) =>{
         res.json({
@@ -90,6 +102,15 @@ app.get("/gewaesser/:id.json", function(req,res){
 app.get("/gewaesserDaten", function(req, res){
     db
         .getWaters()
+        .then((result) => {
+            res.json(
+                result.rows
+            );
+        });
+});
+app.get("/getAllClubsReg", function(req, res){
+    db
+        .getAllClubs()
         .then((result) => {
             res.json(
                 result.rows

@@ -5,6 +5,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import HeaderLoggedInClub from "./HeaderLoggedInClub";
 import ScannerClub from "./ScannerClub";
 import WatersClub from "./WatersClub";
+import ClubProfile from "./ClubProfile";
 
 export default class AppClub extends React.Component{
     constructor(props){
@@ -39,6 +40,7 @@ export default class AppClub extends React.Component{
                 <BrowserRouter>
                     <div>
                         <Route path="*" render={() => <HeaderLoggedInClub  /> } />
+                        <Route exact path="/clubs" render={() => <ClubProfile  club={this.state}/> } />
                         <Route path="/scanner" render={() => <ScannerClub  /> } />
                         <Route path="/WatersClub" render={() => <WatersClub  club={this.state}/> } />
                     </div>

@@ -40,6 +40,7 @@ export default class ScannerClub extends React.Component {
                     resultPostcode: array[3],
                     resultCity: array[4],
                     resultLicensenumber: array[5],
+                    resultWaterName: array[6],
                     valid: true,
                     notValid: false
                 });
@@ -54,6 +55,7 @@ export default class ScannerClub extends React.Component {
                     resultPostcode: array[3],
                     resultCity: array[4],
                     resultLicensenumber: array[5],
+                    resultWaterName: array[6],
                     valid: false,
                     notValid: true
                 });
@@ -82,6 +84,7 @@ export default class ScannerClub extends React.Component {
                             <p>Postleitzahl:    {this.state.resultPostcode}</p>
                             <p>Ort:    {this.state.resultCity}</p>
                             <p>Fischereischeinnummer:   {this.state.resultLicensenumber}</p>
+                            <p>Gewässer:   {this.state.resultWaterName}</p>
                             {this.state.valid && <div id="gultig"><p>GÜLTIG</p></div>}
                             {this.state.notValid && <div id="ungultig>"><p id="ungultig">UNGÜLTIG</p></div>}
                         </div>

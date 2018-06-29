@@ -23,7 +23,7 @@ export default class TicketToPdf extends React.Component{
                 const pdf = new jsPDF();
                 pdf.addImage(imgData, 'JPEG', 5, 5, 200, 285);
                 // pdf.output('dataurlnewwindow');
-                pdf.save(`${this.props.curWater.name}-${this.props.user.last}-${this.props.user.first}.pdf`);
+                pdf.save(`${this.props.curWater.name}-${this.props.user.last}-${this.props.user.first}-${this.props.year}-${this.props.month}-${this.props.day}.pdf`);
             })
             .catch((err) =>{
                 console.log(err);
