@@ -10,9 +10,42 @@ export default class TicketToPdf extends React.Component{
         super(props);
         this.state = {};
         this.createPDF = this.createPDF.bind(this);
+        this.ticketBatabaseInsert = this.ticketDatabaseInsert.bind(this);
+        this.buyTicket = this.buyTicket.bind(this);
     }
     componentDidMount(){
-        console.log(this.props);
+    }
+    buyTicket(){
+        this.ticketDatabaseInsert();
+        this.createPDF();
+    }
+    ticketDatabaseInsert(){
+        const buyerId = this.props.user.id;
+        const buyerFirst = this.props.user.first;
+        const buyerLast = this.props.user.last;
+        const buyerStreet = this.props.user.street;
+        const buyerPostcode = this.props.user.postcode;
+        const buyerBirthplace = this.props.user.birthplace;
+        const buyerLicensenumber = this.props.user.licensenumber;
+        const clubName = this.props.curWater.club;
+        const waterAdress = this.props.curWater.adress;
+        const waterRules = this.props.curWater.rules;
+        const waterName = this.props.curWater.name;
+        axios
+            .post("/uploadTicket", {buyerId, buyerFirst, buyerLast, buyerStreet, buyerPostcode, buyerBirthplace, buyerLicensenumber, clubName, waterAdress, waterRules, waterName})
+            .then(resp => {
+                if (resp.data.success) {
+                    this.setState({
+                        error: false
+                    });
+                } else {
+                    this.setState({
+                        error: true
+                    });
+                }
+            }).catch((err) =>{
+                console.log(err);
+            });
     }
     createPDF(){
         console.log("create pdf called");
@@ -62,7 +95,7 @@ export default class TicketToPdf extends React.Component{
                     </div>
                 </div>
                 <div id="pdfBuyCnacleButton">
-                    <h1 onClick={this.createPDF}>Kaufen</h1>
+                    <h1 onClick={this.buyTicket}>Kaufen</h1>
                     <h1 onClick={this.props.cancle}> Abbrechen</h1>
                 </div>
             </div>

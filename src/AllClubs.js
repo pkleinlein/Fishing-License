@@ -46,7 +46,7 @@ export default class AllClubs extends React.Component {
                                             className="waterPic"
                                             src={
                                                 club.icon ||
-                                                "/assets/lake.jpg"
+                                                "/assets/defaultpicture.png"
                                             }
                                         />
                                         <h1 className="waterName">

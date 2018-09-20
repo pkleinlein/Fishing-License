@@ -135,6 +135,15 @@ app.post("/registerWater", function(req, res){
             });
         });
 });
+app.post("/uploadTicket", function(req, res){
+    db
+        .buyTicket(req.body.buyerId, req.body.buyerFirst, req.body.buyerLast, req.body.buyerStreet, req.body.buyerPostcode, req.body.buyerBirthplace, req.body.buyerLicensenumber, req.body.clubName, req.body.waterAdress, req.body.waterRules, req.body.waterName)
+        .then(() =>{
+            res.json({
+                success: true
+            });
+        });
+});
 app.post("/registerClub", function(req, res) {
     db
         .hashPassword(req.body.password)
@@ -210,8 +219,6 @@ app.post("/loginClub", function(req, res){
             });
         });
 });
-
-
 
 app.post("/register", function(req, res) {
     db

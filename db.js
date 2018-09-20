@@ -38,7 +38,9 @@ exports.registerClub = function registerClub(name, ceo, clubNumber, street, post
 exports.getClubWaters = function getClubWaters(clubId){
     return db.query("SELECT * FROM wasser WHERE club_id=$1", [clubId]);
 };
-
+exports.buyTicket = function buyTicket(buyerId, buyerFirst, buyerLast, buyerStreet, buyerPostcode, buyerBirthplace, buyerLicensenumber, clubName, waterAdress, waterRules, waterName){
+    return db.query("INSERT INTO tickets (buyer_id, buyer_first, buyer_last, buyer_street, buyer_postcode, buyer_birthplace, buyer_licensenumber, club_name, water_adress, water_rules, water_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)", [buyerId, buyerFirst, buyerLast, buyerStreet, buyerPostcode, buyerBirthplace, buyerLicensenumber, clubName, waterAdress, waterRules, waterName]);
+};
 exports.hashPassword = function (plainTextPassword) {
     return new Promise(function(resolve, reject) {
         bcrypt.genSalt(function(err, salt) {
