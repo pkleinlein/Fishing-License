@@ -24,7 +24,7 @@ export default function WelcomeBody(){
                 <div id="welcomeTextTwo">
                     <h1>Für Vereine</h1>
                     <div id="pTagTwo">
-                        <p>Im Tagestakt attackiert die CSU die Kanzlerin. Nach dem Migrationsthema nimmt sie nun auch den Eurozonen-Plan ins Visier. Um die Sache allein geht es längst nicht mehr, die Atmosphäre ist vergiftet.Im Tagestakt attackiert die CSU die Kanzlerin. Nach dem Migrationsthema nimmt sie nun auch den Eurozonen-Plan ins Visier. Um die Sache allein geht es längst nicht mehr, die Atmosphäre ist vergiftet.</p>
+                        <p>Im <Link to="/clubs">Tagestakt</Link> attackiert die CSU die Kanzlerin. Nach dem Migrationsthema nimmt sie nun auch den Eurozonen-Plan ins Visier. Um die Sache allein geht es längst nicht mehr, die Atmosphäre ist vergiftet.Im Tagestakt attackiert die CSU die Kanzlerin. Nach dem Migrationsthema nimmt sie nun auch den Eurozonen-Plan ins Visier. Um die Sache allein geht es längst nicht mehr, die Atmosphäre ist vergiftet.</p>
                     </div>
                 </div>
             </div>

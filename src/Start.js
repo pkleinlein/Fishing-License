@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reduxPromise from "redux-promise";
 import { composeWithDevTools } from "redux-devtools-extension";
+import AppClubs from "./AppClubs";
+import WelcomeClub from "./WelcomeClub";
 
 import App from "./App";
 // import reducer from "./reducers";
@@ -18,6 +20,9 @@ let component;
 
 if (location.pathname == '/welcome') {
     component = <Welcome />;
+}
+else if (location.pathname == '/clubs') {
+    component = <AppClubs />;
 }
 else {
     component = <App />;

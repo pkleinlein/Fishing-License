@@ -12,12 +12,14 @@ export default class RegisterWater extends React.Component {
         this[e.target.name] = e.target.value;
     }
     handleSubmit() {
-        const {name, club, adress, description, rules, stocking} = this;
+        const {name, adress, description, rules, stocking} = this;
+        const club = this.props.club.name;
+        const clubId = this.props.club.id;
         axios
-            .post("/registerWater", {name, club, adress, description, rules, stocking})
+            .post("/registerWater", {clubId, name, club, adress, description, rules, stocking})
             .then(resp => {
                 if (resp.data.success) {
-                    location.replace("/");
+                    location.replace("/clubs");
                 } else {
                     this.setState({
                         error: true
@@ -29,19 +31,19 @@ export default class RegisterWater extends React.Component {
     }
     render() {
         return (
-            <div id="outerRegister">
-                <div id="middleRegister">
-                    <div id="innerRegister">
-                        {this.state.error && <div className="err">Oops! You suck</div>}
-                        <input type="text" name="name" placeholder="Name" onChange={this.handleInput}/>
-                        <input type="text" name="club" placeholder="Verein" onChange={this.handleInput}/>
-                        <input type="text" name="adress" placeholder="Adresse" onChange={this.handleInput}/>
-                        <input type="text" name="description" placeholder="Beschreibung" onChange={this.handleInput}/>
-                        <input type="text" name="rules" placeholder="Regeln" onChange={this.handleInput}/>
-                        <input type="text" name="stocking" placeholder="Besatz" onChange={this.handleInput}/>
-                        <button onClick={this.handleSubmit}>Registrieren</button>
-                    </div>
+            <div id="outerWaterRegister">
+                <div id ="minusWContainer">
+                    <h1 onClick={this.props.hideWaterUploader} className="hoverWaterReg" id="minusW">- Schließen</h1>
                 </div>
+
+                <div id="innerRegisterWater">
+                    {this.state.error && <div className="err">Oops! You suck</div>}
+                    <input type="text" name="name" placeholder="Name" onChange={this.handleInput}/>                        <input type="text" name="adress" placeholder="Adresse" onChange={this.handleInput}/>                        <input type="text" name="description" placeholder="Beschreibung" onChange={this.handleInput}/>
+                    <input type="text" name="rules" placeholder="Regeln" onChange={this.handleInput}/>
+                    <input type="text" name="stocking" placeholder="Besatz" onChange={this.handleInput}/>
+                    <button onClick={this.handleSubmit}>Registrieren</button>
+                </div>
+
             </div>
         );
     }

@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS clubs;
+
+CREATE TABLE clubs(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(300) NOT NULL,
+    ceo VARCHAR(300) NOT NULL,
+    clubNumber TEXT NOT NULL,
+    street VARCHAR(250) NOT NULL,
+    postcode TEXT NOT NULL,
+    city VARCHAR(300) NOT NULL,
+    icon TEXT,
+    email VARCHAR(250) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
